@@ -10,11 +10,10 @@ exports.up = (knex) => {
         table.string('senha').notNullable();
 
         table.integer("id_barcoCadastro").unsigned().index().references("id").inTable("barcoCadastro")
-        table.integer("id_tota").unsigned().index().references("id").inTable("barqueiro")
+        table.integer("id_rota").unsigned().index().references("id").inTable("rota")
 })
 };
 
 exports.down = (knex) => {
     return knex.schema.dropTableIfExists('barqueiro');
   };
-  

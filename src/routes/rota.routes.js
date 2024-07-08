@@ -1,5 +1,5 @@
 const {Router} = require('express')
-    const RotaController = require('../controller/RotaController')
+const RotaController = require('../controller/RotaController')
 
 const rotaRoutes = Router()
 
