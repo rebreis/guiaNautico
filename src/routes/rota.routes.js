@@ -9,3 +9,5 @@ rotaRoutes.post('/', rotaController.createRota)
 rotaRoutes.get('/', rotaController.listRota)
 rotaRoutes.put('/', rotaController.updateRota)
 rotaRoutes.delete('/', rotaController.deleteRota)
+
+module.exports = rotaRoutes

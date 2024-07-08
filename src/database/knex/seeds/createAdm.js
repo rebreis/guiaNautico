@@ -1,14 +1,15 @@
 const {hash} = require('bcryptjs');
-const knex = require('knex');
+const knex = require('../../knex');
+require('dotenv/config.js')
 
-exports.seed = async (knex) =>{
+exports.seed = async () =>{
     const hashedsenha = await hash(process.env.ADM_SENHA, 8)
 
     await knex('usuario').insert([
         {
-            name:process.env.USER_ADM,
+            nome:process.env.USER_ADM,
             email: process.env.ADM_EMAIL,
-            password: String(hashedsenha),
+            senha: String(hashedsenha),
             isAdm: true
 
         }

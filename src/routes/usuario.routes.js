@@ -13,9 +13,9 @@ usuarioRoutes.get('/', usuarioController.listUsuario);
 
 usuarioRoutes.use(ensureAuthenticaded)
 
-usuarioRoutes.post('/', checkIsAdmin, usuarioController.createUser);
-usuarioRoutes.delete('/:id_usuario', checkIsAdmin, usuarioController.deleteUsers);
-usuarioRoutes.put('/:id_usuario', checkIsAdmin, usuarioController.updateUsers);
+usuarioRoutes.post('/', checkIsAdmin, usuarioController.createUsuario);
+usuarioRoutes.delete('/:id_usuario', checkIsAdmin, usuarioController.deleteUsuario);
+usuarioRoutes.put('/:id_usuario', checkIsAdmin, usuarioController.updateUsuario);
 
 module.exports = usuarioRoutes
 

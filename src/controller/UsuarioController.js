@@ -3,9 +3,10 @@ const bcrypt = require('bcryptjs');
 
 class UsuarioController {
     async createUsuario(req, res){
-        const {nome, email, telefone, senha} = req.body;
+       
+            const {nome, email, telefone, senha} = req.body;
 
-        const isAdmin = false
+        const isAdm = false
 
         const hashedsenha = await bcrypt.hash(senha, 8)
 
@@ -14,10 +15,11 @@ class UsuarioController {
             email,
             telefone,
             senha: hashedsenha,
-            isAdmin
+            isAdm
 
         })
         return res.status(201).json('Usuário criado com sucesso!')
+        
     }
     
     async listUsuario(req, res){
