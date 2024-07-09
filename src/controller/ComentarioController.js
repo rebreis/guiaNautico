@@ -3,12 +3,15 @@ const bcrypt = require('bcryptjs');
 
 class ComentarioController {
     async createComentario(req, res){
-        const {titulo, conteudo, dataCriacao} = req.body;
+        const {titulo, conteudo} = req.body;
+        const {id} = req.user
+        const {id_barqueiro} = req.params
 
         await knex('comentario').insert({
             titulo,
             conteudo,
-            dataCriacao
+            id_usuario: id,
+            id_barqueiro
         })
         return res.status(201).json('Comentario criado com sucesso!')
     }

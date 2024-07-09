@@ -47,5 +47,20 @@ class BarqueiroController {
 
         res.status(200).json('Barqueiro atualizado com sucesso')
     }
+
+    async updateBarcoRota(req, res){
+        const {id_barco, id_rota} = req.body
+        const {id_barqueiro} = req.params;
+
+        const barqueiro = await knex('barqueiro').where({id: id_barqueiro})
+        
+     if (!barqueiro){
+        return res.status(400).json("Barqueiro não encontrado")
+     } 
+
+        await knex('barqueiro').where({id: id_barqueiro}).update({nome, email}), [barqueiro.nome, barqueiro.email]
+
+        res.status(200).json('Barqueiro atualizado com sucesso')
+    }
 }
 module.exports = BarqueiroController;

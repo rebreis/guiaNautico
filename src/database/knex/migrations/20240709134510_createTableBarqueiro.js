@@ -9,7 +9,7 @@ exports.up = (knex) => {
         table.string('cir').notNullable();
         table.string('senha').notNullable();
 
-        table.integer("id_barcoCadastro").unsigned().index().references("id").inTable("barcoCadastro")
+        table.integer("id_barco").unsigned().index().references("id").inTable("barco")
         table.integer("id_rota").unsigned().index().references("id").inTable("rota")
 })
 };

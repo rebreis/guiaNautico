@@ -4,7 +4,7 @@ exports.up = (knex) => {
         table.increments('id').primary();
         table.string('titulo').notNullable();
         table.string('conteudo').notNullable();
-        table.string('dataCriacao').notNullable();
+        table.timestamp('dataCriacao').defaultTo(knex.fn.now());
         
         table.integer("id_usuario").unsigned().index().references("id").inTable("usuario")
         table.integer("id_barqueiro").unsigned().index().references("id").inTable("barqueiro")

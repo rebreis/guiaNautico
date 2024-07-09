@@ -2,7 +2,7 @@ exports.up = (knex) => {
 
     return knex.schema.createTable("rota", (table) => {
         table.increments('id').primary();
-        table.string('horatio').notNullable();
+        table.string('horario').notNullable();
         table.string('origem').notNullable();
         table.string('destino').notNullable();
         table.string('valorFixo').notNullable();

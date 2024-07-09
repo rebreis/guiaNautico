@@ -3,10 +3,10 @@ const bcrypt = require('bcryptjs');
 
 class RotaController {
     async createRota(req, res){
-        const {hoario, origem, destino, valorFixo, diasOperacao} = req.body;
+        const {horario, origem, destino, valorFixo, diasOperacao} = req.body;
 
         await knex('rota').insert({
-            hoario,
+            horario,
             origem,
             destino,
             valorFixo,
@@ -28,12 +28,12 @@ class RotaController {
         return res.status(200).json('Rota deletado com sucesso!')
     }
     async updateRota(req, res){
-        const {hoario, origem, destino} = req.body
+        const {horario, origem, destino} = req.body
         const {id_rota} = req.params;
 
         const rota = await knex('rota').where({id: id_rota})
         
-        rota.hoarario = hoarario ?? rota.hoarario
+        rota.horario = horario ?? rota.horario
         rota.origem = origem ?? rota.origem
         rota.destino = destino ?? rota.destino
         

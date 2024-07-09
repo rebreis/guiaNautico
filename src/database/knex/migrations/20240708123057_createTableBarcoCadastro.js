@@ -1,6 +1,6 @@
 exports.up = (knex) => {
 
-    return knex.schema.createTable("barcoCadastro", (table) => {
+    return knex.schema.createTable("barco", (table) => {
         table.increments('id').primary();
         table.string('capacidade').notNullable();
         table.string('cor').notNullable();
@@ -11,6 +11,6 @@ exports.up = (knex) => {
 };
 
 exports.down = (knex) => {
-    return knex.schema.dropTableIfExists('barcoCadastro');
+    return knex.schema.dropTableIfExists('barco');
   };
   
