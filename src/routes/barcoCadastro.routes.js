@@ -11,7 +11,7 @@ barcoCadastroRoutes.use(ensureAuthenticaded)
 
 barcoCadastroRoutes.post('/', checkIsAdmin, barcoCadastroController.createBarco)
 barcoCadastroRoutes.get('/', barcoCadastroController.listBarco)
-barcoCadastroRoutes.put('/', barcoCadastroController.updateBarco)
-barcoCadastroRoutes.delete('/', barcoCadastroController.deleteBarco)
+barcoCadastroRoutes.put('/:id_barco', barcoCadastroController.updateBarco)
+barcoCadastroRoutes.delete('/:id_barco', barcoCadastroController.deleteBarco)
 
 module.exports = barcoCadastroRoutes

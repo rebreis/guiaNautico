@@ -7,7 +7,7 @@ const rotaController = new RotaController
 
 rotaRoutes.post('/', rotaController.createRota)
 rotaRoutes.get('/', rotaController.listRota)
-rotaRoutes.put('/', rotaController.updateRota)
-rotaRoutes.delete('/', rotaController.deleteRota)
+rotaRoutes.put('/:id_rota', rotaController.updateRota)
+rotaRoutes.delete('/:id_rota', rotaController.deleteRota)
 
 module.exports = rotaRoutes
